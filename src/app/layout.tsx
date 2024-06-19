@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Loder from '@/components/Loder'
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +19,9 @@ export default function RootLayout({
 
   return (
     <html lang="en" className="dark">
+      <head>
+        <title>Music App</title>
+      </head>
       <body className={inter.className}>
         <div className="relative w-full flex items-center justify-center">
 
