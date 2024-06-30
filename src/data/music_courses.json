@@ -58,7 +58,7 @@
         "price": 149.99,
         "instructor": "Alex Wilson",
         "isFeatured": true,
-        "image": "/IMG/Gif/Sunset.gif"
+        "image": "/IMG/Gif/Bg_gif_1%20(1).webp"
       },
       {
         "id": 7,
@@ -78,7 +78,7 @@
         "price": 169.99,
         "instructor": "Luke Harris",
         "isFeatured": true,
-        "image": "/IMG/Gif/LCPT.gif"
+        "image": "/IMG/Gif/Sunset.gif"
       },
       {
         "id": 9,

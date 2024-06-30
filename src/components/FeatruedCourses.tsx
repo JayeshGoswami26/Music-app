@@ -27,9 +27,9 @@ function FeatruedCourses() {
     : featuredCourses.slice(0, 3);
   return (
     <>
-      <div className="w-full bg-[#00ffff22] py-12 p-5 text-center">
-        <h2 className="uppercase text-cyan-500"> FEATURED COURSES </h2>
-        <h1 className="text-4xl font-bold break-words tracking-wide bg-clip-text text-transparent bg-gradient-to-b from-blue-100 to-blue-100">
+      <div className="w-full bg-[#00ffff22] dark:bg-[#00ffff22] py-12 p-5 text-center flex justify-center items-center flex-col">
+        <h2 className="uppercase text-cyan-500 shineText w-fit text-center my-5 "> FEATURED COURSES  </h2>
+        <h1 className="text-4xl font-bold break-words tracking-wide bg-clip-text text-transparent bg-gradient-to-b dark:from-blue-100 dark:to-cyan-200 from-cyan-700 to-cyan-400 ">
           {" "}
           Listing To The Best Music{" "}
         </h1>
@@ -51,6 +51,7 @@ function FeatruedCourses() {
                   transition={{ type: "spring", stiffness: 100, damping: 20 }} 
                 >
                   <Image
+                    id={`Img${course.id}`}
                     src={course.image}
                     width={500}
                     height={100}
@@ -79,11 +80,10 @@ function FeatruedCourses() {
         {/* View All Courses */}
         <div className="mt-20 text-center flex justify-center">
           <div
-            className="bg-[#f2f2f2] text-black py-3 px-5 rounded-lg"
+            className="button"
             onClick={() => setShowAll(!showAll)}
           >
-            {" "}
-            View all courses{" "}
+                        {!showAll? 'View all courses' :'View fewer courses'}
           </div>
         </div>
       </div>
