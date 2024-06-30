@@ -16,6 +16,7 @@ export const StickyScroll = ({
   contentClassName?: string;
 }) => {
   const [activeCard, setActiveCard] = React.useState(0);
+  const [currentTheme, setCurrentTheme] = React.useState('dark')
   const ref = useRef<any>(null);
   const { scrollYProgress } = useScroll({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
@@ -40,32 +41,31 @@ export const StickyScroll = ({
     setActiveCard(closestBreakpointIndex);
   });
 
-  const currentTheme = localStorage.getItem("Theme");
+  const backgroundColors = [currentTheme === "light" ? "#ecfeff" : "#000"];
 
-  const backgroundColors = [
-    currentTheme==='light'? '#ecfeff' : '#000',
-  ];
-
-  const textColors= [
+  const textColors = [
     "rgb(255 69 0)",
     "#4ab7ff",
     "#ff00ae",
     "#18be1d",
     "#d400ff",
-  ]
+  ];
   const linearGradients = [
     "linear-gradient(to bottom right, var(--cyan-500), var(--emerald-500))",
     "linear-gradient(to bottom right, var(--pink-500), var(--indigo-500))",
     "linear-gradient(to bottom right, var(--orange-500), var(--yellow-500))",
   ];
-
   const [backgroundGradient, setBackgroundGradient] = useState(
     linearGradients[0]
   );
 
   useEffect(() => {
     setBackgroundGradient(linearGradients[activeCard % linearGradients.length]);
-  }, [activeCard]);
+    setInterval(() => {
+      setCurrentTheme(localStorage.getItem('Theme') || '')
+    },0)
+    
+  }, [activeCard,currentTheme]);
 
   return (
     <motion.div
